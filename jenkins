@@ -1,0 +1,24 @@
+pipeline {
+    agent { label 'DebianNode_omni' }
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    sh """#!/bin/bash
+                    PATH=~/bin:$PATH
+                    """
+                }
+                checkout changelog: true, poll: false, scm: [
+                $class: 'RepoScm',
+                currentBranch: true,
+                forceSync: true,
+                noTags: true,
+                manifestBranch: 'master',
+                manifestRepositoryUrl: 'git@github.com:MentorEmbedded/industrial-manifest',
+                manifestFile: 'prod/2.2/all.xml',
+                quiet: true
+                ]
+        }
+        }
+    }
+}
