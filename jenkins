@@ -13,9 +13,9 @@ pipeline {
                 currentBranch: true,
                 forceSync: true,
                 noTags: true,
-                manifestBranch: 'master',
-                manifestRepositoryUrl: 'git@github.com:MentorEmbedded/industrial-manifest',
-                manifestFile: 'prod/2.2/all.xml',
+                manifestBranch: 'main',
+                manifestRepositoryUrl: 'git@github.com:gcvidyasagar/manifest.git',
+                manifestFile: 'test.xml',
                 quiet: true
                 ]
         }
