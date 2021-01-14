@@ -11,4 +11,5 @@ node
     manifestFile: 'test.xml',
     quiet: true
     ]
+  }
 }
