@@ -1,6 +1,7 @@
 node
 {
   stage('checkout') {
+    PATH="${HOME}/.bin:${PATH}"
     checkout changelog: true, poll: false, scm: [
     $class: 'RepoScm',
     currentBranch: true,
