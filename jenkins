@@ -1,13 +1,5 @@
-pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    sh """#!/bin/bash
-                    PATH=~/bin:$PATH
-                    """
-                }
+node
+{
                 checkout changelog: true, poll: false, scm: [
                 $class: 'RepoScm',
                 currentBranch: true,
@@ -19,6 +11,3 @@ pipeline {
                 quiet: true
                 ]
         }
-        }
-    }
-}
